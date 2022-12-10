@@ -12,7 +12,7 @@ public class NinjaService {
 	@Autowired
 	private NinjaRepository ninjaRepo;
 	
-	private Ninja createNinja(Ninja ninja) {
+	public Ninja createNinja(Ninja ninja) {
 		return ninjaRepo.save(ninja);
 	}
 }

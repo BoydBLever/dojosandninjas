@@ -1,5 +1,6 @@
 package com.boydlever.dojosandninjas.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,12 +20,16 @@ public class DojoService {
 		return dojoRepo.save(dojo);
 	}
 	//find one dojo
-	public Dojo oneDojo(Long id) {
-		Optional<Dojo> optionalDojo = dojoRepo.findById(id); //findById returns an optional type
-		if(optionalDojo.isPresent()) {
-			return optionalDojo.get();
-		}else {
-			return null;
+		public Dojo oneDojo(Long id) {
+			Optional<Dojo> optionalDojo = dojoRepo.findById(id);
+			if(optionalDojo.isPresent()) {
+				return optionalDojo.get();
+			} else {
+				return null;
+			}
 		}
-	}
+		//find all dojos
+		public List<Dojo> allDojos(){
+			return dojoRepo.findAll();
+		}
 }
