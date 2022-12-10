@@ -11,13 +11,33 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Tacos</title>
+    <title>One Dojo</title>
     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/main.css"> <!-- change to match your file/naming structure -->
     <script src="/webjars/jquery/jquery.min.js"></script>
     <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
-   
+   <div>
+<table>
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Dojo</th>
+		</tr>
+	</thead>
+	<tbody>
+		<c:forEach var="eachDojo" items="${dojoList }">
+			<tr>
+				<td> <a href="/dojos/${eachDojo.id }">${eachDojo.name}</a></td>
+				
+				<td> <c:out value="${eachNinja.firstName }"/></td>
+				<td> <c:out value="${eachNinja.lastName }"/></td>
+			</tr>
+		</c:forEach>
+	</tbody>
+</table>
+</div>
 </body>
 </html>

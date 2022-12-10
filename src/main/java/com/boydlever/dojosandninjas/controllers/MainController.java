@@ -65,5 +65,12 @@ public class MainController {
 				return "redirect:/";
 			}
 		}
+	//oneDojo
+	@GetMapping("/")
+	public String ninjaDashboard(Model model) {
+		model.addAttribute("dojoList", dojoService.allDojos());
+		model.addAttribute("ninjaList", ninjaService.allNinjas());
+		return "oneDojo.jsp";
+	}
 }
 
